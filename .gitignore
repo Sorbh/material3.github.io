@@ -58,7 +58,7 @@ analysis_benchmark.json
 .pub-preload-cache/
 .pub-cache/
 .pub/
-build/
+build/*
 flutter_*.png
 linked_*.ds
 unlinked.ds
@@ -136,3 +136,4 @@ app.*.symbols
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
 !.vscode/settings.json
+!build/web/
