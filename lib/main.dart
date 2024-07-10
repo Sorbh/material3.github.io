@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material3_color_scheme/widget/hover_container.dart';
 
 void main() {
   runApp(const MyApp());
@@ -100,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               prefix: const Padding(padding: EdgeInsets.only(left: 8), child: Icon(Icons.tag)),
                               suffix: IconButton(
                                 icon: const Icon(Icons.content_paste_rounded),
-                                onPressed: () => copyToClipboard(textController.text),
+                                onPressed: () => copyToClipboard(context, textController.text),
                               ),
                               autofocus: true,
                               maxLength: 9,
@@ -145,28 +146,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: [
                         Expanded(
-                          child: _NameBaadMe(
-                            title: 'Primary',
+                          child: _ColorGridContainer(
+                            colorTitle: 'Primary',
                             color: colorScheme.primary,
-                            onTitle: 'On Primary',
+                            onColorTitle: 'On Primary',
                             onColor: colorScheme.onPrimary,
                           ),
                         ),
                         widthDivider,
                         Expanded(
-                          child: _NameBaadMe(
-                            title: 'Secondary',
+                          child: _ColorGridContainer(
+                            colorTitle: 'Secondary',
                             color: colorScheme.secondary,
-                            onTitle: 'On Secondary',
+                            onColorTitle: 'On Secondary',
                             onColor: colorScheme.onSecondary,
                           ),
                         ),
                         widthDivider,
                         Expanded(
-                          child: _NameBaadMe(
-                            title: 'Tertiary',
+                          child: _ColorGridContainer(
+                            colorTitle: 'Tertiary',
                             color: colorScheme.tertiary,
-                            onTitle: 'On Tertiary',
+                            onColorTitle: 'On Tertiary',
                             onColor: colorScheme.onTertiary,
                           ),
                         ),
@@ -176,10 +177,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   widthDivider,
                   Expanded(
                     flex: 1,
-                    child: _NameBaadMe(
-                      title: 'Error',
+                    child: _ColorGridContainer(
+                      colorTitle: 'Error',
                       color: colorScheme.error,
-                      onTitle: 'On Error',
+                      onColorTitle: 'On Error',
                       onColor: colorScheme.onError,
                     ),
                   ),
@@ -198,28 +199,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: [
                         Expanded(
-                          child: _NameBaadMe(
-                            title: 'Primary Container',
+                          child: _ColorGridContainer(
+                            colorTitle: 'Primary Container',
                             color: colorScheme.primaryContainer,
-                            onTitle: 'On Primary Container',
+                            onColorTitle: 'On Primary Container',
                             onColor: colorScheme.onPrimaryContainer,
                           ),
                         ),
                         widthDivider,
                         Expanded(
-                          child: _NameBaadMe(
-                            title: 'Secondary Container',
+                          child: _ColorGridContainer(
+                            colorTitle: 'Secondary Container',
                             color: colorScheme.secondaryContainer,
-                            onTitle: 'On Secondary Container',
+                            onColorTitle: 'On Secondary Container',
                             onColor: colorScheme.onSecondaryContainer,
                           ),
                         ),
                         widthDivider,
                         Expanded(
-                          child: _NameBaadMe(
-                            title: 'Tertiary Container',
+                          child: _ColorGridContainer(
+                            colorTitle: 'Tertiary Container',
                             color: colorScheme.tertiaryContainer,
-                            onTitle: 'On Tertiary Container',
+                            onColorTitle: 'On Tertiary Container',
                             onColor: colorScheme.onTertiaryContainer,
                           ),
                         ),
@@ -229,10 +230,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   widthDivider,
                   Expanded(
                     flex: 1,
-                    child: _NameBaadMe(
-                      title: 'Error Container',
+                    child: _ColorGridContainer(
+                      colorTitle: 'Error Container',
                       color: colorScheme.errorContainer,
-                      onTitle: 'On Error Container',
+                      onColorTitle: 'On Error Container',
                       onColor: colorScheme.onErrorContainer,
                     ),
                   ),
@@ -251,41 +252,41 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: [
                         Expanded(
-                          child: _NameBaadMe(
-                            title: 'Primary Fixed',
+                          child: _ColorGridContainer(
+                            colorTitle: 'Primary Fixed',
                             color: colorScheme.primaryFixed,
-                            secondTitle: 'Primary Fixed Dim',
-                            secondColor: colorScheme.primaryFixedDim,
-                            onTitle: 'On Primary Fixed',
+                            colorDimTitle: 'Primary Fixed Dim',
+                            colorDim: colorScheme.primaryFixedDim,
+                            onColorTitle: 'On Primary Fixed',
                             onColor: colorScheme.onPrimaryFixed,
-                            secondOnTitle: 'On Primary Fixed Variant',
-                            secondOnColor: colorScheme.onPrimaryFixedVariant,
+                            onColorVarientTitle: 'On Primary Fixed Variant',
+                            onColorVarient: colorScheme.onPrimaryFixedVariant,
                           ),
                         ),
                         widthDivider,
                         Expanded(
-                          child: _NameBaadMe(
-                            title: 'Secondary Fixed',
+                          child: _ColorGridContainer(
+                            colorTitle: 'Secondary Fixed',
                             color: colorScheme.secondaryFixed,
-                            secondTitle: 'Secondary Fixed Dim',
-                            secondColor: colorScheme.secondaryFixedDim,
-                            onTitle: 'On Secondary Fixed',
+                            colorDimTitle: 'Secondary Fixed Dim',
+                            colorDim: colorScheme.secondaryFixedDim,
+                            onColorTitle: 'On Secondary Fixed',
                             onColor: colorScheme.onSecondaryFixed,
-                            secondOnTitle: 'On Secondary Fixed Variant',
-                            secondOnColor: colorScheme.onSecondaryFixedVariant,
+                            onColorVarientTitle: 'On Secondary Fixed Variant',
+                            onColorVarient: colorScheme.onSecondaryFixedVariant,
                           ),
                         ),
                         widthDivider,
                         Expanded(
-                          child: _NameBaadMe(
-                            title: 'Tertiary Fixed',
+                          child: _ColorGridContainer(
+                            colorTitle: 'Tertiary Fixed',
                             color: colorScheme.tertiaryFixed,
-                            secondTitle: 'Tertiary Fixed Dim',
-                            secondColor: colorScheme.tertiaryFixedDim,
-                            onTitle: 'On Tertiary Fixed',
+                            colorDimTitle: 'Tertiary Fixed Dim',
+                            colorDim: colorScheme.tertiaryFixedDim,
+                            onColorTitle: 'On Tertiary Fixed',
                             onColor: colorScheme.onTertiaryFixed,
-                            secondOnTitle: 'On Tertiary Fixed Variant',
-                            secondOnColor: colorScheme.onTertiaryFixedVariant,
+                            onColorVarientTitle: 'On Tertiary Fixed Variant',
+                            onColorVarient: colorScheme.onTertiaryFixedVariant,
                           ),
                         ),
                       ],
@@ -311,39 +312,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.surfaceDim),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Surface Dim',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onSurface),
-                            ),
+                          child: _ColorGridContainer(
+                            colorTitle: 'Surface Dim',
+                            color: colorScheme.surfaceDim,
+                            onColor: colorScheme.onSurface,
                           ),
                         ),
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.surface),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Surface',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onSurface),
-                            ),
+                          child: _ColorGridContainer(
+                            colorTitle: 'Surface',
+                            color: colorScheme.surface,
+                            onColor: colorScheme.onSurface,
                           ),
                         ),
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.surfaceBright),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Surface Bright',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onSurface),
-                            ),
+                          child: _ColorGridContainer(
+                            colorTitle: 'Surface Bright',
+                            color: colorScheme.surfaceBright,
+                            onColor: colorScheme.onSurface,
                           ),
                         ),
                       ],
@@ -352,37 +338,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   widthDivider,
                   Expanded(
                     flex: 1,
-                    child: Expanded(
-                      child: Column(
-                        children: [
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              width: double.maxFinite,
-                              height: double.maxFinite,
-                              decoration: BoxDecoration(color: colorScheme.inverseSurface),
-                              padding: const EdgeInsets.all(8),
-                              child: Text(
-                                'Inverse Surface',
-                                style: textTheme.titleMedium!.copyWith(color: colorScheme.onInverseSurface),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              width: double.maxFinite,
-                              height: double.maxFinite,
-                              decoration: BoxDecoration(color: colorScheme.onInverseSurface),
-                              padding: const EdgeInsets.all(8),
-                              child: Text(
-                                'On Inverse Surface',
-                                style: textTheme.titleMedium!.copyWith(color: colorScheme.inverseSurface),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: _ColorGridContainer(
+                      color: colorScheme.onInverseSurface,
+
+                      onColor: colorScheme.inverseSurface,
+                      onColorTitle: 'Inverse Surface',
+
+                      onColorVarient: colorScheme.onInverseSurface,
+                      onColorVarientTitle: 'On Inverse Surface',
+                      // color: colorScheme.inverseSurface,
                     ),
                   ),
                   widthDivider,
@@ -400,63 +364,38 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.surfaceContainerLowest),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Surface Container Lowest',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onSurface),
-                            ),
+                          child: _ColorGridContainer(
+                            color: colorScheme.surfaceContainerLowest,
+                            colorTitle: 'Surface Container Lowest',
+                            onColor: colorScheme.onSurface,
                           ),
                         ),
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.surfaceContainerLow),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Surface Container Low',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onSurface),
-                            ),
+                          child: _ColorGridContainer(
+                            color: colorScheme.surfaceContainerLow,
+                            colorTitle: 'Surface Container Low',
+                            onColor: colorScheme.onSurface,
                           ),
                         ),
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.surfaceContainer),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Surface Container',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onSurface),
-                            ),
+                          child: _ColorGridContainer(
+                            color: colorScheme.surfaceContainer,
+                            colorTitle: 'Surface Container',
+                            onColor: colorScheme.onSurface,
                           ),
                         ),
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.surfaceContainerHigh),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Surface Container High',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onSurface),
-                            ),
+                          child: _ColorGridContainer(
+                            color: colorScheme.surfaceContainerHigh,
+                            colorTitle: 'Surface Container High',
+                            onColor: colorScheme.onSurface,
                           ),
                         ),
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.surfaceContainerHighest),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Surface Container Highest',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onSurface),
-                            ),
+                          child: _ColorGridContainer(
+                            color: colorScheme.surfaceContainerHighest,
+                            colorTitle: 'Surface Container Highest',
+                            onColor: colorScheme.onSurface,
                           ),
                         ),
                       ],
@@ -469,29 +408,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         Expanded(
                           flex: 1,
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.inversePrimary),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Inverse Primary',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onPrimaryContainer),
-                            ),
+                          child: _ColorGridContainer(
+                            onColor: colorScheme.inversePrimary,
+                            onColorTitle: 'Inverse Primary',
+                            color: colorScheme.onPrimaryContainer,
                           ),
                         ),
                         Expanded(
                           flex: 1,
                           child: Container(),
-                          // child: Container(
-                          //   width: double.maxFinite,
-                          //   height: double.maxFinite,
-                          //   decoration: BoxDecoration(color: colorScheme.onInverseSurface),
-                          //   child: Text(
-                          //     'On Inverse Surface',
-                          //     style: textTheme.titleMedium!.copyWith(color: colorScheme.inverseSurface),
-                          //   ),
-                          // ),
                         ),
                       ],
                     ),
@@ -512,51 +437,31 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         widthDivider,
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.onSurface),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'On Surface',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.surfaceContainerLowest),
-                            ),
+                          child: _ColorGridContainer(
+                            onColor: colorScheme.onSurface,
+                            onColorTitle: 'On Surface',
+                            color: colorScheme.surfaceContainerLowest,
                           ),
                         ),
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.onSurfaceVariant),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'On Surface Variant',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.surfaceContainerLowest),
-                            ),
+                          child: _ColorGridContainer(
+                            onColor: colorScheme.onSurfaceVariant,
+                            onColorTitle: 'On Surface Variant',
+                            color: colorScheme.surfaceContainerLowest,
                           ),
                         ),
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.outline),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Outline',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onSurface),
-                            ),
+                          child: _ColorGridContainer(
+                            onColor: colorScheme.outline,
+                            onColorTitle: 'Outline',
+                            color: colorScheme.onSurface,
                           ),
                         ),
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.outlineVariant),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Outline Variant',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.onSurface),
-                            ),
+                          child: _ColorGridContainer(
+                            onColor: colorScheme.outlineVariant,
+                            onColorTitle: 'Outline Variant',
+                            color: colorScheme.onSurface,
                           ),
                         ),
                       ],
@@ -568,28 +473,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.scrim),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Scrim',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.surfaceContainerLowest),
-                            ),
+                          child: _ColorGridContainer(
+                            onColor: colorScheme.scrim,
+                            onColorTitle: 'Scrim',
+                            color: Colors.white,
                           ),
                         ),
                         widthDivider,
                         Expanded(
-                          child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: BoxDecoration(color: colorScheme.shadow),
-                            padding: const EdgeInsets.all(8),
-                            child: Text(
-                              'Shadow',
-                              style: textTheme.titleMedium!.copyWith(color: colorScheme.surfaceContainerLowest),
-                            ),
+                          child: _ColorGridContainer(
+                            onColor: colorScheme.shadow,
+                            onColorTitle: 'Shadow',
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -607,86 +502,99 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class _NameBaadMe extends StatelessWidget {
-  const _NameBaadMe({
-    required this.title,
-    required this.color,
-    required this.onTitle,
-    required this.onColor,
-    this.secondTitle,
-    this.secondColor,
-    this.secondOnTitle,
-    this.secondOnColor,
+class _ColorGridContainer extends StatelessWidget {
+  const _ColorGridContainer({
+    this.colorTitle,
+    this.color,
+    this.colorDimTitle,
+    this.colorDim,
+    this.onColorTitle,
+    this.onColor,
+    this.onColorVarientTitle,
+    this.onColorVarient,
   });
-  final String title;
-  final Color color;
-  final String? secondTitle;
-  final Color? secondColor;
-  final String onTitle;
-  final Color onColor;
-  final String? secondOnTitle;
-  final Color? secondOnColor;
+  final String? colorTitle;
+  final Color? color;
+
+  final String? colorDimTitle;
+  final Color? colorDim;
+
+  final String? onColorTitle;
+  final Color? onColor;
+
+  final String? onColorVarientTitle;
+  final Color? onColorVarient;
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
-        Expanded(
-          flex: 2,
-          child: Row(
-            children: [
-              Expanded(
-                flex: 1,
-                child: Container(
-                  width: double.maxFinite,
-                  height: double.maxFinite,
-                  decoration: BoxDecoration(color: color),
-                  padding: const EdgeInsets.all(8),
-                  child: Text(
-                    title,
-                    style: textTheme.titleMedium!.copyWith(color: onColor),
-                  ),
-                ),
-              ),
-              if (secondTitle != null)
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    width: double.maxFinite,
-                    height: double.maxFinite,
-                    decoration: BoxDecoration(color: secondColor),
-                    padding: const EdgeInsets.all(8),
-                    child: Text(
-                      secondTitle!,
-                      style: textTheme.titleMedium!.copyWith(color: secondOnColor),
+        if (colorTitle != null || colorDimTitle != null)
+          Expanded(
+            flex: 2,
+            child: Row(
+              children: [
+                if (colorTitle != null)
+                  Expanded(
+                    flex: 1,
+                    child: HoverContainer(
+                      decoration: BoxDecoration(color: color),
+                      onTap: () {
+                        copyToClipboard(context, colorToHex(color!));
+                      },
+                      child: ColorNameText(
+                        color: color!,
+                        title: colorTitle!,
+                        textColor: onColor,
+                      ),
                     ),
                   ),
-                ),
-            ],
-          ),
-        ),
-        Expanded(
-          flex: 1,
-          child: Container(
-            width: double.maxFinite,
-            decoration: BoxDecoration(color: onColor),
-            padding: const EdgeInsets.all(8),
-            child: Text(
-              onTitle,
-              style: textTheme.titleMedium!.copyWith(color: color),
+                if (colorDimTitle != null)
+                  Expanded(
+                    flex: 1,
+                    child: HoverContainer(
+                      decoration: BoxDecoration(color: colorDim),
+                      onTap: () {
+                        copyToClipboard(context, colorToHex(colorDim!));
+                      },
+                      child: ColorNameText(
+                        color: colorDim!,
+                        title: colorDimTitle!,
+                        textColor: onColor,
+                      ),
+                    ),
+                  ),
+              ],
             ),
           ),
-        ),
-        if (secondOnTitle != null)
+        if (onColorTitle != null)
           Expanded(
             flex: 1,
-            child: Container(
-              width: double.maxFinite,
-              decoration: BoxDecoration(color: secondOnColor),
-              padding: const EdgeInsets.all(8),
-              child: Text(
-                secondOnTitle!,
-                style: textTheme.titleMedium!.copyWith(color: secondColor),
+            child: HoverContainer(
+              decoration: BoxDecoration(color: onColor),
+              onTap: () {
+                copyToClipboard(context, colorToHex(onColor!));
+              },
+              child: ColorNameText(
+                color: onColor!,
+                title: onColorTitle!,
+                textColor: color,
+                lineBreak: false,
+              ),
+            ),
+          ),
+        if (onColorVarientTitle != null)
+          Expanded(
+            flex: 1,
+            child: HoverContainer(
+              decoration: BoxDecoration(color: onColorVarient),
+              onTap: () {
+                copyToClipboard(context, colorToHex(onColorVarient!));
+              },
+              child: ColorNameText(
+                color: onColorVarient!,
+                title: onColorVarientTitle!,
+                textColor: colorTitle != null ? color : onColor,
+                lineBreak: false,
               ),
             ),
           ),
@@ -695,11 +603,46 @@ class _NameBaadMe extends StatelessWidget {
   }
 }
 
+class ColorNameText extends StatelessWidget {
+  const ColorNameText({
+    super.key,
+    required this.color,
+    required this.title,
+    this.textColor,
+    this.lineBreak = true,
+  });
+  final Color color;
+  final String title;
+  final Color? textColor;
+  final bool lineBreak;
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        style: Theme.of(context).textTheme.titleMedium!.copyWith(color: textColor),
+        children: [
+          TextSpan(text: title),
+          TextSpan(
+            text: '${lineBreak ? '\n' : ' '} #${colorToHex(color)}',
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(color: textColor),
+          )
+        ],
+      ),
+    );
+  }
+}
+
 // Just an example of how to use/interpret/format text input's result.
-void copyToClipboard(String input) {
+void copyToClipboard(BuildContext context, String input) {
   String textToCopy = input.replaceFirst('#', '').toUpperCase();
   if (textToCopy.startsWith('FF') && textToCopy.length == 8) {
     textToCopy = textToCopy.replaceFirst('FF', '');
   }
   Clipboard.setData(ClipboardData(text: '#$textToCopy'));
+
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+    content: Text('$input copied'),
+    duration: Durations.long2,
+    behavior: SnackBarBehavior.floating,
+  ));
 }
