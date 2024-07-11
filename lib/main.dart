@@ -76,6 +76,17 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
           centerTitle: false,
           actions: [
+            Container(
+              height: 32,
+              width: 120,
+              decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
+              alignment: Alignment.center,
+              child: Text(
+                'Seed Color',
+                style: textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            const SizedBox(width: 12),
             OutlinedButton.icon(
               onPressed: () {
                 showDialog(
