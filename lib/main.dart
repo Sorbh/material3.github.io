@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final themeData = Theme.of(context);
     final colorScheme = ColorScheme.fromSeed(brightness: brightness, seedColor: color);
-    final textTheme = themeData.textTheme;
+    final textTheme = themeData.textTheme.apply(bodyColor: colorScheme.onSurface, displayColor: colorScheme.onSurface);
     const widthDivider = SizedBox(width: 8);
     const heightDivider = SizedBox(height: 8);
     return Theme(

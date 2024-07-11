@@ -52,12 +52,12 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCjvHeu_KKRXDGZ4W56ug38ygajKYQ6CEs',
-    appId: '1:673673110922:web:a9eabf7991af0504399473',
-    messagingSenderId: '673673110922',
-    projectId: 'materialcolorscheme',
-    authDomain: 'materialcolorscheme.firebaseapp.com',
-    storageBucket: 'materialcolorscheme.appspot.com',
-    measurementId: 'G-ZK0SHSEPKY',
+    apiKey: String.fromEnvironment('apiKey'),
+    appId: String.fromEnvironment('appId'),
+    messagingSenderId: String.fromEnvironment('messagingSenderId'),
+    projectId: String.fromEnvironment('projectId'),
+    authDomain: String.fromEnvironment('authDomain'),
+    storageBucket: String.fromEnvironment('storageBucket'),
+    measurementId: String.fromEnvironment('measurementId'),
   );
 }
