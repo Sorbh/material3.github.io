@@ -6,9 +6,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material3_color_scheme/firebase_options.dart';
 import 'package:material3_color_scheme/widget/hover_container.dart';
+import 'package:seo/seo.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +19,8 @@ void main() async {
 
   final analytics = FirebaseAnalyticsWeb();
   analytics.setAnalyticsCollectionEnabled(true);
+
+  usePathUrlStrategy();
 
   runApp(const MyApp());
 }
@@ -27,13 +31,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Color Scheme for Material 3',
-      theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-          useMaterial3: true,
-          textTheme: GoogleFonts.nunitoTextTheme()),
-      home: const MyHomePage(title: 'Color Scheme for Material 3'),
+    return SeoController(
+      enabled: true,
+      tree: WidgetTree(context: context),
+      child: MaterialApp(
+        title: 'Color Scheme for Material 3',
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+            useMaterial3: true,
+            textTheme: GoogleFonts.nunitoTextTheme()),
+        home: const MyHomePage(title: 'Color Scheme for Material 3'),
+      ),
     );
   }
 }
@@ -73,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: colorScheme.inversePrimary,
-          title: Text(widget.title),
+          title: Seo.text(text: widget.title, style: TextTagStyle.h1, child: Text(widget.title)),
           centerTitle: false,
           actions: [
             Container(
@@ -641,16 +649,20 @@ class ColorNameText extends StatelessWidget {
   final bool lineBreak;
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: Theme.of(context).textTheme.titleMedium!.copyWith(color: textColor),
-        children: [
-          TextSpan(text: title),
-          TextSpan(
-            text: '${lineBreak ? '\n' : ' '} #${colorToHex(color)}',
-            style: Theme.of(context).textTheme.bodySmall!.copyWith(color: textColor),
-          )
-        ],
+    return Seo.text(
+      text: title,
+      style: TextTagStyle.h1,
+      child: RichText(
+        text: TextSpan(
+          style: Theme.of(context).textTheme.titleMedium!.copyWith(color: textColor),
+          children: [
+            TextSpan(text: title),
+            TextSpan(
+              text: '${lineBreak ? '\n' : ' '} #${colorToHex(color)}',
+              style: Theme.of(context).textTheme.bodySmall!.copyWith(color: textColor),
+            )
+          ],
+        ),
       ),
     );
   }

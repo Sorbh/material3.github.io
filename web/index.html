@@ -50,6 +50,12 @@
 
 <body>
   <h1 style="text-align: center;">Material Color Scheme</h1>
+  <script>
+    const regExp = new RegExp("bot|google|baidu|bing|msn|teoma|slurp|yandex", "i");
+    if (regExp.test(navigator.userAgent)) {
+      window.flutterWebRenderer = "html";
+    }
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 
