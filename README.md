@@ -12,7 +12,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Sorbh/material3ColorScheme">
+  <a href="https://materialcolorscheme.xyz/" target="_blank">
     <img src="https://materialcolorscheme.xyz/icons/Icon-192.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -68,8 +68,13 @@ This is flutter web project to genereate material 3 color scheme using seed colo
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+<!-- Flutter web link -->
+### Flutter Web
+<a href="https://materialcolorscheme.xyz/" target="_blank"><h3>https://materialcolorscheme.xyz/</h3></a>
+</br>
 
+
+### Built With
 </br>
 
 [![Flutter][flutter-shield]][flutter-url]
@@ -131,11 +136,10 @@ I am very new to open source community. All suggestion and improvement are most 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+Here is the list of the article I followed during the development of this project
 
 * [Material 3](https://m3.material.io/)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
