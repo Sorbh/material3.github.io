@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Sorbh/material3ColorScheme">
-    <img src="web/icons/icon-192.png" alt="Logo" width="80" height="80">
+    <img src="https://materialcolorscheme.xyz/icons/Icon-192.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Material 3 Color Scheme</h3>
