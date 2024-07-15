@@ -1,30 +1,33 @@
+import 'dart:async';
 import 'dart:ui';
 
-import 'package:firebase_analytics_web/firebase_analytics_web.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:material3_color_scheme/firebase_options.dart';
 import 'package:material3_color_scheme/screen/home_compact.dart';
 import 'package:material3_color_scheme/screen/home_expanded.dart';
 import 'package:material3_color_scheme/screen/home_medium.dart';
 import 'package:seo/seo.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // final analytics = FirebaseAnalyticsWeb();
+  // analytics.setAnalyticsCollectionEnabled(true);
 
-  final analytics = FirebaseAnalyticsWeb();
-  analytics.setAnalyticsCollectionEnabled(true);
+  // usePathUrlStrategy();
 
-  usePathUrlStrategy();
-
-  runApp(const MyApp());
+  runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    runApp(const MyApp()); // starting point of app
+  }, (error, stackTrace) {
+    print("Error FROM OUT_SIDE FRAMEWORK ");
+    print("--------------------------------");
+    print("Error :  $error");
+    print("StackTrace :  $stackTrace");
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -58,13 +61,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final analytics = FirebaseAnalyticsWeb();
+  // final analytics = FirebaseAnalyticsWeb();
   late Brightness brightness;
   late Color seedColor;
   final textController = TextEditingController();
   @override
   void initState() {
-    analytics.setCurrentScreen(screenName: runtimeType.toString());
+    // analytics.setCurrentScreen(screenName: runtimeType.toString());
     brightness = PlatformDispatcher.instance.platformBrightness;
     seedColor = Colors.green;
 
