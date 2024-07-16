@@ -32,29 +32,6 @@ class HomeCompact extends StatelessWidget {
         backgroundColor: colorScheme.inversePrimary,
         title: Seo.text(text: title, style: TextTagStyle.h1, child: Text(title)),
         centerTitle: false,
-        // actions: [
-        //   Container(
-        //     height: 32,
-        //     width: 120,
-        //     decoration: BoxDecoration(color: seedColor, borderRadius: BorderRadius.circular(8)),
-        //     alignment: Alignment.center,
-        //     child: Text(
-        //       'Seed Color',
-        //       style: textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
-        //     ),
-        //   ),
-        //   const SizedBox(width: 12),
-        //   OutlinedButton.icon(
-        //     onPressed: onColorPickerTap,
-        //     icon: const Icon(CupertinoIcons.color_filter),
-        //     label: const Text('Select Color'),
-        //   ),
-        //   IconButton(
-        //     onPressed: onBrightnessTap,
-        //     icon: Icon(brightness == Brightness.light ? CupertinoIcons.sun_max : CupertinoIcons.sun_max_fill),
-        //   ),
-        //   const SizedBox(width: 24),
-        // ],
       ),
 
       backgroundColor: colorScheme.surface,
@@ -78,7 +55,7 @@ class HomeCompact extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Text(
                     'Seed Color',
-                    style: textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
+                    style: textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: colorScheme.onPrimary),
                   ),
                 ),
                 const SizedBox(width: 12),

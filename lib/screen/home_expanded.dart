@@ -37,17 +37,17 @@ class HomeExpanded extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               'Seed Color',
-              style: textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold),
+              style: textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: colorScheme.onPrimary),
             ),
           ),
           const SizedBox(width: 12),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: onColorPickerTap,
             icon: const Icon(CupertinoIcons.color_filter),
             label: const Text('Select Color'),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: onBrightnessTap,
             icon: Icon(brightness == Brightness.light ? CupertinoIcons.sun_max : CupertinoIcons.sun_max_fill),
           ),
           const SizedBox(width: 24),

@@ -23,6 +23,7 @@ void main() async {
 
     final analytics = FirebaseAnalyticsWeb();
     analytics.setAnalyticsCollectionEnabled(true);
+    // analytics.setCurrentScreen(screenName: 'HomeSceen');
 
     usePathUrlStrategy();
 
@@ -66,13 +67,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final analytics = FirebaseAnalyticsWeb();
   late Brightness brightness;
   late Color seedColor;
   final textController = TextEditingController();
   @override
   void initState() {
-    analytics.setCurrentScreen(screenName: runtimeType.toString());
     brightness = PlatformDispatcher.instance.platformBrightness;
     seedColor = Colors.green;
 
