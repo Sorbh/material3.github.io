@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:material3_color_scheme/widget/color_grid_container.dart';
+import 'package:material3_color_scheme/core/core.dart';
+import 'package:material3_color_scheme/presentation/home/widget/color_grid_container.dart';
 import 'package:seo/seo.dart';
 
 class HomeExpanded extends StatelessWidget {
@@ -73,6 +74,12 @@ class HomeExpanded extends StatelessWidget {
                           color: colorScheme.primary,
                           onColorTitle: 'On Primary',
                           onColor: colorScheme.onPrimary,
+                          colorTap: () {
+                            AppRouter.gotoColorRoleScreen(context, 'Primary');
+                          },
+                          onColorTap: () {
+                            AppRouter.gotoColorRoleScreen(context, 'On Primary');
+                          },
                         ),
                       ),
                       widthDivider,

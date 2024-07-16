@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:material3_color_scheme/widget/color_grid_container.dart';
+import 'package:material3_color_scheme/core/core.dart';
+import 'package:material3_color_scheme/presentation/home/widget/color_grid_container.dart';
 import 'package:seo/seo.dart';
 
-class HomeCompact extends StatelessWidget {
-  const HomeCompact(
+class HomeMedium extends StatelessWidget {
+  const HomeMedium(
       {super.key,
       required this.title,
       required this.seedColor,
@@ -32,46 +33,33 @@ class HomeCompact extends StatelessWidget {
         backgroundColor: colorScheme.inversePrimary,
         title: Seo.text(text: title, style: TextTagStyle.h1, child: Text(title)),
         centerTitle: false,
+        actions: [
+          Container(
+            height: 32,
+            width: 120,
+            decoration: BoxDecoration(color: seedColor, borderRadius: BorderRadius.circular(8)),
+            alignment: Alignment.center,
+            child: Text(
+              'Seed Color',
+              style: textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: colorScheme.onPrimary),
+            ),
+          ),
+          const SizedBox(width: 12),
+          OutlinedButton.icon(
+            onPressed: onColorPickerTap,
+            icon: const Icon(CupertinoIcons.color_filter),
+            label: const Text('Select Color'),
+          ),
+          IconButton(
+            onPressed: onBrightnessTap,
+            icon: Icon(brightness == Brightness.light ? CupertinoIcons.sun_max : CupertinoIcons.sun_max_fill),
+          ),
+          const SizedBox(width: 24),
+        ],
       ),
-
       backgroundColor: colorScheme.surface,
       body: ListView(
         children: [
-          heightDivider,
-          Container(
-            decoration: BoxDecoration(
-              color: colorScheme.inversePrimary,
-            ),
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            alignment: Alignment.centerRight,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  height: 32,
-                  width: 120,
-                  decoration: BoxDecoration(color: seedColor, borderRadius: BorderRadius.circular(8)),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Seed Color',
-                    style: textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold, color: colorScheme.onPrimary),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                OutlinedButton.icon(
-                  onPressed: onColorPickerTap,
-                  icon: const Icon(CupertinoIcons.color_filter),
-                  label: const Text('Select Color'),
-                ),
-                const SizedBox(width: 12),
-                IconButton(
-                  onPressed: onBrightnessTap,
-                  icon: Icon(brightness == Brightness.light ? CupertinoIcons.sun_max : CupertinoIcons.sun_max_fill),
-                ),
-              ],
-            ),
-          ),
           heightDivider,
           SizedBox(
             height: height3,
@@ -84,6 +72,12 @@ class HomeCompact extends StatelessWidget {
                     color: colorScheme.primary,
                     onColorTitle: 'On Primary',
                     onColor: colorScheme.onPrimary,
+                    colorTap: () {
+                      AppRouter.gotoColorRoleScreen(context, 'Primary');
+                    },
+                    onColorTap: () {
+                      AppRouter.gotoColorRoleScreen(context, 'On Primary');
+                    },
                   ),
                 ),
                 widthDivider,
@@ -416,7 +410,7 @@ class HomeCompact extends StatelessWidget {
           ),
           heightDivider,
         ],
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }

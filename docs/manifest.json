@@ -1,10 +1,10 @@
 {
-    "name": "material3_color_scheme",
+    "name": "Material Color Scheme",
     "short_name": "material3_color_scheme",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#FFFFFF",
-    "theme_color": "#FFFFFF",
+    "background_color": "#8BC34B",
+    "theme_color": "#8BC34B",
     "description": "Project to understand material color scheme",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
