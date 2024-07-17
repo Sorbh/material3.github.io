@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:material3_color_scheme/main.dart';
 import 'package:material3_color_scheme/presentation/shared/hover_container.dart';
 import 'package:seo/seo.dart';
 
@@ -49,10 +50,19 @@ class ColorGridContainer extends StatelessWidget {
                     child: HoverContainer(
                       decoration: BoxDecoration(color: color),
                       onTap: colorTap,
-                      child: ColorNameText(
-                        color: color!,
-                        title: colorTitle!,
-                        textColor: onColor,
+                      child: Stack(
+                        children: [
+                          ColorNameText(
+                            color: color!,
+                            title: colorTitle!,
+                            textColor: onColor,
+                          ),
+                          CopyIcon(
+                              color: onColor!,
+                              onTap: () {
+                                copyToClipboard(context, colorToHex(color!));
+                              })
+                        ],
                       ),
                     ),
                   ),
@@ -62,10 +72,19 @@ class ColorGridContainer extends StatelessWidget {
                     child: HoverContainer(
                       decoration: BoxDecoration(color: colorDim),
                       onTap: colorDimTap,
-                      child: ColorNameText(
-                        color: colorDim!,
-                        title: colorDimTitle!,
-                        textColor: onColor,
+                      child: Stack(
+                        children: [
+                          ColorNameText(
+                            color: colorDim!,
+                            title: colorDimTitle!,
+                            textColor: onColor,
+                          ),
+                          CopyIcon(
+                              color: onColor!,
+                              onTap: () {
+                                copyToClipboard(context, colorToHex(colorDim!));
+                              })
+                        ],
                       ),
                     ),
                   ),
@@ -77,15 +96,23 @@ class ColorGridContainer extends StatelessWidget {
             flex: 1,
             child: HoverContainer(
               decoration: BoxDecoration(color: onColor),
-              // onTap: () {
               //   copyToClipboard(context, colorToHex(onColor!));
               // },
               onTap: onColorTap,
-              child: ColorNameText(
-                color: onColor!,
-                title: onColorTitle!,
-                textColor: color,
-                lineBreak: false,
+              child: Stack(
+                children: [
+                  ColorNameText(
+                    color: onColor!,
+                    title: onColorTitle!,
+                    textColor: color,
+                    lineBreak: false,
+                  ),
+                  CopyIcon(
+                      color: color!,
+                      onTap: () {
+                        copyToClipboard(context, colorToHex(onColor!));
+                      })
+                ],
               ),
             ),
           ),
@@ -98,11 +125,20 @@ class ColorGridContainer extends StatelessWidget {
               //   copyToClipboard(context, colorToHex(onColorVarient!));
               // },
               onTap: onColorVarientTap,
-              child: ColorNameText(
-                color: onColorVarient!,
-                title: onColorVarientTitle!,
-                textColor: colorTitle != null ? color : onColor,
-                lineBreak: false,
+              child: Stack(
+                children: [
+                  ColorNameText(
+                    color: onColorVarient!,
+                    title: onColorVarientTitle!,
+                    textColor: colorTitle != null ? color : onColor,
+                    lineBreak: false,
+                  ),
+                  CopyIcon(
+                      color: colorTitle != null ? color! : onColor!,
+                      onTap: () {
+                        copyToClipboard(context, colorToHex(onColorVarient!));
+                      })
+                ],
               ),
             ),
           ),
@@ -138,6 +174,32 @@ class ColorNameText extends StatelessWidget {
               style: Theme.of(context).textTheme.bodySmall!.copyWith(color: textColor),
             )
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CopyIcon extends StatelessWidget {
+  const CopyIcon({super.key, required this.onTap, required this.color});
+  final Color color;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.topRight,
+      child: SizedBox(
+        width: 24,
+        height: 24,
+        // decoration: BoxDecoration(color: context.colorScheme.primary, shape: BoxShape.circle),
+        child: InkWell(
+          onTap: onTap,
+          child: Icon(
+            Icons.copy,
+            size: 12,
+            color: color,
+          ),
         ),
       ),
     );

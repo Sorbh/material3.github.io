@@ -1,7 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-  <loc>https://materialcolorscheme.xyz/</loc>
-  <lastmod>2024-07-11T13:19:26+00:00</lastmod>
-</url>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://materialcolorscheme.xyz/</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Primary</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Primary</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Primary container</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Primary Container</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Secondary</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Secondary</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Secondary Container</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Secondary Container</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Tertiary</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Tertiary</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Tertiary Container</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Tertiary Container</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Error</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Error</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Error Container</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Error Container</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Surface</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Surface</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Surface Variant</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Surface Container Lowest</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Surface Container Low</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Surface Container</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Surface Container High</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Surface Container Highest</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Inverse Surface</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Inverse On Surface</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Inverse Primary</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Outline</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Outline Variant</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Primary Fixed</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Secondary Fixed</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Tertiary Fixed</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Primary Fixed Dim</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Secondary Fixed Dim</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Tertiary Fixed Dim</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Primary Fixed</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Secondary Fixed</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Tertiary Fixed</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Primary Fixed Variant</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Secondary Fixed Variant</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/On Tertiary Fixed Variant</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Surface Dim</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
+	<url>
+		<loc>https://materialcolorscheme.xyz/home/color-role/Surface Bright</loc>
+		<lastmod>2024-07-16</lastmod>
+	</url>
 </urlset>
